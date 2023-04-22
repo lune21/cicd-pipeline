@@ -7,6 +7,12 @@ pipeline {
       }
     }
 
+    stage('Application build') {
+      steps {
+        sh 'script scripts/build.sh'
+      }
+    }
+
   }
   environment {
     registry = 'lucy21/cicd-pipeline'
