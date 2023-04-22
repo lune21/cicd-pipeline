@@ -15,7 +15,7 @@ pipeline {
 
     stage('Tests') {
       steps {
-        sh 'script scripts/test2.sh'
+        sh './scripts/test2.sh'
       }
     }
 
