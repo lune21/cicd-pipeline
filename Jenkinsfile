@@ -36,6 +36,17 @@ pipeline {
       }
     }
 
+    stage('Docker Image Push') {
+      steps {
+        script {
+          docker.withRegistry('', 'dockerhub-id') {
+            docker.image("${registry}:${env.BUILD_ID}").push('latest')
+          }
+        }
+
+      }
+    }
+
   }
   environment {
     registry = 'lucy21/cicd-pipeline'
