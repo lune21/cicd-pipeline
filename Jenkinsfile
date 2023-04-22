@@ -13,6 +13,12 @@ pipeline {
       }
     }
 
+    stage('Tests') {
+      steps {
+        sh 'script scripts/test.sh'
+      }
+    }
+
   }
   environment {
     registry = 'lucy21/cicd-pipeline'
