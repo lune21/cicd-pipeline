@@ -27,6 +27,15 @@ pipeline {
       }
     }
 
+    stage('Docker Image Build') {
+      steps {
+        script {
+          docker.build("${registry}:${env.BUILD_ID}")
+        }
+
+      }
+    }
+
   }
   environment {
     registry = 'lucy21/cicd-pipeline'
